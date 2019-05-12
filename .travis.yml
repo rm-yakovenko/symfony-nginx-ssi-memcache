@@ -4,7 +4,8 @@ services:
   - docker
 
 script:
+  - export CONTAINER_USER=$(id -u)
   - XDEBUG=1 docker-compose build
-  - docker-compose run --rm app php -i
-  - CONTAINER_USER=$(id -u) docker-compose up -d
+  - docker-compose run --rm app composer install
+  - docker-compose up -d
   - curl -f 127.0.0.1:1345
