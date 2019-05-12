@@ -4,7 +4,6 @@ services:
   - docker
 
 script:
-  - cp .env.dist .env
   - XDEBUG=1 docker-compose build
   - docker-compose run --rm app php -i
   - docker-compose up -d

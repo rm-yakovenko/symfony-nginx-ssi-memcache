@@ -15,9 +15,10 @@ class DefaultController extends AbstractController
 
     public function cachedAction()
     {
-        $response = new Response((new \DateTime())->format(\DateTime::ATOM));
+        $timestamp = (new \DateTime())->format(\DateTime::ATOM);
+        $response = new Response("Cached at: $timestamp");
         $response->setPublic()
-            ->setSharedMaxAge(5 * 60);
+            ->setSharedMaxAge(60 * 60);
         return $response;
     }
 }
