@@ -1,0 +1,7 @@
+index:
+    path: /
+    controller: 'App\Controller\DefaultController::indexAction'
+
+cached:
+  path: /cached
+  controller: 'App\Controller\DefaultController::cachedAction'
