@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App;
+namespace App\HttpCache;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class HttpCache
+class HttpCache implements HttpCacheInterface
 {
     /**
      * @var \Memcached

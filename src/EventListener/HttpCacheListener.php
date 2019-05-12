@@ -3,23 +3,19 @@
 
 namespace App\EventListener;
 
-use App\HttpCache;
+use App\HttpCache\HttpCacheInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
-class MemcachedCacheListener implements EventSubscriberInterface
+class HttpCacheListener implements EventSubscriberInterface
 {
     /**
-     * @var HttpCache
+     * @var HttpCacheInterface
      */
     private $httpCache;
 
-    /**
-     * MemcachedCacheListener constructor.
-     * @param HttpCache $httpCache
-     */
-    public function __construct(HttpCache $httpCache)
+    public function __construct(HttpCacheInterface $httpCache)
     {
         $this->httpCache = $httpCache;
     }
