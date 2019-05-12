@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ render_ssi(path('cached', {a:1})) }}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
